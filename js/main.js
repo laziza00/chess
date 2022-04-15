@@ -1,7 +1,7 @@
 
 
 
-let tableList = document.querySelectorAll('.ches__list-table li')
+let tableList = document.querySelectorAll('.ches__item')
 count =0
 let chessTable = document.querySelector('.ches__list-table');
 let textX = document.querySelector('#x')
@@ -26,31 +26,52 @@ for(let i=1; i<=8; i++) {
 arr.forEach((item, index )=> {
 
         let li = document.createElement('li')
-        li.className = "ches__item";
-        li.classList.add('a' +item.x, 'b' +item.y);
+  
+        li.classList.add('a' + item.x, 'b' + item.y, 'ches__item');
         li.textContent = item.x + "." +item.y;
     
         if( (item.x+item.y) %2==0) {
             li.style.backgroundImage = 'url(../images/wood.jpg)'
-            // console.log(li);
         }
         else {
             li.style.backgroundImage = 'url(../images/imags.jpeg)'
         }
-        li.addEventListener('mouseover', (e)=> {
-         
-                textX.textContent = `x = ${item.y}`
-                textY.textContent = `y = ${item.x}`
-      
+        li.addEventListener('mouseover', ()=> {
+            textX.textContent = `x = ${item.y}`
+            textY.textContent = `y = ${item.x}`
         })
         chessTable.appendChild(li);
-
 })
 console.log(tableList);
 
+
+let queen = document.querySelector('.queen')
+let king = document.querySelector('.king')
+let farzin = document.querySelector('.farzin')
+let horse = document.querySelector('.horse')
+let bishop = document.querySelector('.bishop')
+let onfoot = document.querySelector('.onfoot')
+
+
+
+
+let x, y
+
 tableList.forEach((item,index)=> {
-    console.log("bbvggvg");
+    // console.log("bbvggvg");
     item.addEventListener('mouseover', ()=> {
+        //  console.log("sdfghjk");
+        textX.textContent = `x = ${item.textContent[0]}`
+        textY.textContent = `y = ${item.textContent[3]}`
+      
+        x = item.textContent[0]
+        y = item.textContent[3]
+   
+    })
+    farzin.addEventListener('clcik', (els) => {
+
+        item.addEventListener('mouseover', ()=> {
+
         let xCor = item.classList[0];
         let yCor = item.classList[1];
 
@@ -64,7 +85,8 @@ tableList.forEach((item,index)=> {
             element.classList.add('green')
         })
         item.classList.add('red')
-        
+        console.log(item.classList[0]);
+        })
     })
     item.addEventListener('mouseout', ()=> {
         let xCor = item.classList[0];
@@ -74,24 +96,22 @@ tableList.forEach((item,index)=> {
         let yCors = document.querySelectorAll(`.${yCor}`)
         // console.log(xCors);
         xCors.forEach(element => {
-            element.classList.add('white')
+            element.classList.remove('green')
         })
         yCors.forEach(element => {
-            element.classList.add('white')
+            element.classList.remove('green')
         })
         item.classList.add('white')
-        // console.log(item.classList[0]);
+        console.log(item.classList[0]);
     })
+
 })
 
+// tableList.forEach((e, i)=> {
+//     e.addEventListener('mouseover', ()=> {
 
-let queen = document.querySelector('.queen')
-let king = document.querySelector('.king')
-let farzin = document.querySelector('.farzin')
-let horse = document.querySelector('.horse')
-let bishop = document.querySelector('.bishop')
-let onfoot = document.querySelector('.onfoot')
-
+//     })
+// })
 
 // function queenfun () {
     // queen.addEventListener('click', ()=> {
