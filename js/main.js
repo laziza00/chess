@@ -1,7 +1,7 @@
 
 
 
-let tableList = document.querySelectorAll('.ches__item')
+let tableList = document.querySelectorAll('.ches__list-table li')
 count =0
 let chessTable = document.querySelector('.ches__list-table');
 let textX = document.querySelector('#x')
@@ -15,8 +15,8 @@ let arr =[]
 for(let i=1; i<=8; i++) {
     for(let j=1; j<=8; j++) {
         let obj ={
-            x: i,
-            y:j
+            y: i,
+            x:j
         }
         arr.push(obj)
     }
@@ -49,6 +49,7 @@ arr.forEach((item, index )=> {
 console.log(tableList);
 
 tableList.forEach((item,index)=> {
+    console.log("bbvggvg");
     item.addEventListener('mouseover', ()=> {
         let xCor = item.classList[0];
         let yCor = item.classList[1];
@@ -84,42 +85,80 @@ tableList.forEach((item,index)=> {
 })
 
 
-
-function queenfun () {
-    queen.addEventListener('click', ()=> {
-        queen.classList.add('green')
-        king.classList.remove('green')
-        farzin.classList.remove('green')
-        bishop.classList.remove('green')
-        horse.classList.remove('green')
-        onfoot.classList.remove('green')
+let queen = document.querySelector('.queen')
+let king = document.querySelector('.king')
+let farzin = document.querySelector('.farzin')
+let horse = document.querySelector('.horse')
+let bishop = document.querySelector('.bishop')
+let onfoot = document.querySelector('.onfoot')
 
 
+// function queenfun () {
+    // queen.addEventListener('click', ()=> {
+    //     // console.log("aaa");
+    //     queen.classList.add('green')
+    //     king.classList.remove('green')
+    //     farzin.classList.remove('green')
+    //     bishop.classList.remove('green')
+    //     horse.classList.remove('green')
+    //     onfoot.classList.remove('green')
 
-        tableList.forEach((e)=> {
-            e.addEventListener('mouseover', ()=> {
-                e.classList.add('moveitem')
-                x =e.childNodes[1].textContent;
-                y =e.childNodes[3].textContent
-                queen.addEventListener('click', forms1(x, y))
-                if(count==1) {
-                    count++
-                }else{
-                    count=1
-                }
-            })
-           
-        })
-    })
-}
-queenfun()
-function forms1(x, y) {
-    tableList.forEach((item)=> {
-        if(item.childNodes[1].textContent ==x || item.childNodes[3].textContent==y) {
-            item.classList.add('green')
-        }
-        else {
-            item.classList.remove('green')
-        }
-    })
-}forms1()
+
+
+    //     tableList.forEach((e)=> {
+    //         e.addEventListener('mouseout', ()=> {
+    //             e.classList.remove('form1')
+    //         })
+    //         e.addEventListener('mouseover', ()=> {
+    //             e.classList.add('moveitem')
+    //             x =e.childNodes[1].textContent;
+    //             y =e.childNodes[3].textContent
+
+    //             queen.addEventListener('click', forms1(x, y))
+    //             if(count==1) {
+    //                 count++
+    //             }else{
+    //                 count=1
+    //             }
+    //         })
+    //        e.classList.remove('moveitem')
+    //     })
+    // })
+// }
+// queenfun()
+
+
+// function itemsFun() {
+//     tableList.forEach((e) => {
+//       e.addEventListener('mouseout', () => {
+//         e.classList.remove('movitem2')
+//         e.classList.remove('movItem')
+//       })
+//       e.addEventListener('mouseover', () => {
+//         tableList.forEach((ee) => {
+//           ee.classList.remove('movitem2')
+//           ee.classList.remove('movItem')
+//         })
+//         e.classList.remove('movItem')
+//         e.classList.add('movitem2')
+//         textX.innerHTML = e.childNodes[1].textContent;
+//         textY.innerHTML = e.childNodes[3].textContent;
+//       })
+//       e.classList.remove('movitem2')
+//       e.classList.remove('movItem')
+//     })
+//   } itemsFun()
+
+
+// function forms1(x, y) {
+//     console.log("a");
+//     tableList.forEach((item)=> {
+//         console.log(item);
+//         if(item.childNodes[1].textContent ==x || item.childNodes[3].textContent==y) {
+//             item.classList.add('green')
+//         }
+//         else {
+//             item.classList.remove('green')
+//         }
+//     })
+// }forms1()
