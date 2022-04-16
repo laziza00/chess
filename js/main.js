@@ -386,7 +386,7 @@ tableList.forEach(idx => {
     let xxx = idx.classList[0].split('')[1]
     let yyy = idx.classList[1].split('')[1];
   
-    if(yCor==6 || yCor==1|| yCor==2 || yCor==3 || yCor==4 || yCor==5 && xCor==xCor) {
+    if(yCor==6 || yCor==2 || yCor==3 || yCor==4 || yCor==5 && xCor==xCor) {
         
         if(xxx==xCor && yyy==((yCor-0)-1)) {
             idx.classList.add('green')
@@ -406,6 +406,14 @@ tableList.forEach(idx => {
             idx.classList.remove('green')
         }
             
+    }
+    if(yCor==8 || yCor==1 && xCor==xCor){
+        if(xxx==xCor && yyy==yCor) {
+            idx.classList.add('green')
+        }
+        else {
+            idx.classList.remove('green')
+        }
     }
     
         })
