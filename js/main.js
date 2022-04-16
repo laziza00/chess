@@ -1,8 +1,4 @@
 
-
-
-
-count =0
 let chessTable = document.querySelector('.ches__list-table');
 let textX = document.querySelector('#x')
 let textY = document.querySelector('#y')
@@ -431,4 +427,20 @@ chessTable.addEventListener("mouseout", () => {
 })
 
 })
+let chesBoard = document.querySelector('.ches__board')
+let dButton = document.querySelector('.ches__three-d');
+
+
+let count =1
+// dButton.addEventListener('click', ()=> {
+
+//     if(count==1) {
+//         dButton.textContent= `2D`
+//         chesBoard.classList.add('anim3D');
+//         count++
+//     }else {
+//         chesBoard.classList.remove('anim3D');
+//         dButton.textContent= `3D`
+//     }
+// })
 
