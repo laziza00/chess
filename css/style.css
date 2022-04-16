@@ -30,8 +30,8 @@ body {
   border-radius: 10px;
 }
 .ches__board-btn:hover {
-  background-color: #27e72d;
-  box-shadow: 0 0 30px 13px #40e946 inset;
+  background-color: #8eebe3;
+  box-shadow: 0 0 30px 13px #8feed9 inset;
   z-index: 4;
   transition: all 0.2s ease;
 }

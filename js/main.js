@@ -214,13 +214,11 @@ tableList.forEach(idx => {
 
             let xCor = el.target.classList[0].split('')[1]
             let yCor = el.target.classList[1].split('')[1]
-         
-            console.log(xCor, yCor);
 
 tableList.forEach(idx => {
         let xxx = idx.classList[0].split('')[1]
         let yyy = idx.classList[1].split('')[1];
-        console.log();
+
         if(xxx==xCor && yyy==((yCor-0)-1) ||
            xxx==xCor && yyy==((yCor-0)-2) ||
            xxx==xCor && yyy==((yCor-0)-3) ||
@@ -279,7 +277,7 @@ tableList.forEach(idx => {
             let xCor = el.target.classList[0].split('')[1]
             let yCor = el.target.classList[1].split('')[1]
          
-            console.log(xCor, yCor);
+     
 
 tableList.forEach(idx => {
         let xxx = idx.classList[0].split('')[1]
@@ -382,30 +380,31 @@ onfoot.addEventListener('click', ()=> {
         let xCor = el.target.classList[0].split('')[1]
         let yCor = el.target.classList[1].split('')[1]
      
-        console.log(xCor, yCor);
+      
 
 tableList.forEach(idx => {
     let xxx = idx.classList[0].split('')[1]
     let yyy = idx.classList[1].split('')[1];
-    console.log();
-    if(yCor==7) {
-        if(xxx==xCor && yyy==((yCor-0)-1)&& yyy==((yCor-0)-2)         ||
-        xxx==((xCor-0)+1) && yyy==((yCor-0)-1)&& yyy==((yCor-0)-2) || 
-        xxx==((xCor-0)+2) && yyy==((yCor-0)-1)&& yyy==((yCor-0)-2) || 
-        xxx==((xCor-0)+3) && yyy==((yCor-0)-1)&& yyy==((yCor-0)-2) ||
-        xxx==((xCor-0)+4) && yyy==((yCor-0)-1)&& yyy==((yCor-0)-2) ||
-        xxx==((xCor-0)+5) && yyy==((yCor-0)-1)&& yyy==((yCor-0)-2) ||
-        xxx==((xCor-0)+6) && yyy==((yCor-0)-1)&& yyy==((yCor-0)-2) ||
-        xxx==((xCor-0)+7) && yyy==((yCor-0)-1)&& yyy==((yCor-0)-2) ||
-        xxx==((xCor-0)+8) && yyy==((yCor-0)-1)&& yyy==((yCor-0)-2)){
-         idx.classList.add('green')
-     }
-     else {
-         idx.classList.remove('green')
-     }
-    }
-
+  
+    if(yCor==7 && xCor==1) {
+        console.log("bbbb");
         
+        if( 
+            xxx==((xCor-0)+1) && (yyy==((yCor-0)-1)&& yyy==((yCor-0)-2)) || 
+            xxx==((xCor-0)+2) && (yyy==((yCor-0)-1)&& yyy==((yCor-0)-2)) || 
+            xxx==((xCor-0)+3) && (yyy==((yCor-0)-1)&& yyy==((yCor-0)-2)) ||
+            xxx==((xCor-0)+4) && (yyy==((yCor-0)-1)&& yyy==((yCor-0)-2)) ||
+            xxx==((xCor-0)+5) && (yyy==((yCor-0)-1)&& yyy==((yCor-0)-2)) ||
+            xxx==((xCor-0)+6) && (yyy==((yCor-0)-1)&& yyy==((yCor-0)-2)) ||
+            xxx==((xCor-0)+7) && (yyy==((yCor-0)-1)&& yyy==((yCor-0)-2)) ||
+            xxx==((xCor-0)+8) && (yyy==((yCor-0)-1)&& yyy==((yCor-0)-2))) {
+                 idx.classList.add('green')
+                 console.log("cccc");
+            }
+            else {
+                idx.classList.remove('green')
+            }       
+    }
         })
    
       })
@@ -414,7 +413,6 @@ tableList.forEach(idx => {
 
 chessTable.addEventListener("mouseout", () => {
     tableList.forEach((element) => {
-        console.log('ok');
         element.classList.remove('green');
         textX.textContent = `x = 0`;
         textY.textContent = `y = 0`;
