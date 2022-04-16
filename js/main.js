@@ -31,7 +31,7 @@ arr.forEach((item, index )=> {
             li.style.backgroundImage = 'url(../images/wood.jpg)'
         }
         else {
-            li.style.backgroundImage = 'url(../images/imags.jpeg)'
+            li.style.backgroundImage = 'url(../images/images3.jpeg)'
         }
         li.addEventListener('mouseover', ()=> {
             textX.textContent = `x=${item.x}`
