@@ -83,8 +83,8 @@ body {
   box-shadow: inset #000;
 }
 .green {
-  background-color: #40e946;
-  box-shadow: 0 0 30px 13px #40e946 inset;
+  -webkit-box-shadow: 0px 0px 30px 13px #09ff00 inset;
+  box-shadow: 0px 0px 31px 13px #09ff00 inset;
 }
 .ches__text {
   font-size: 20px;
