@@ -53,9 +53,6 @@ body {
 .ches__item {
   width: 72px;
   height: 72px;
-  /* background-image: url(../images/imags.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover; */
   color: black;
   display: flex;
   justify-content: center;
@@ -86,8 +83,6 @@ body {
 .green {
   background-color: #40e946;
   box-shadow: 0 0 30px 13px #40e946 inset;
-  z-index: 4;
-  transition: all 0.1s ease;
 }
 .ches__text {
   font-size: 20px;

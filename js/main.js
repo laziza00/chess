@@ -1,7 +1,7 @@
 
 
 
-let tableList = document.querySelectorAll('.ches__item')
+
 count =0
 let chessTable = document.querySelector('.ches__list-table');
 let textX = document.querySelector('#x')
@@ -31,18 +31,22 @@ arr.forEach((item, index )=> {
         li.textContent = item.x + "." +item.y;
     
         if( (item.x+item.y) %2==0) {
+
             li.style.backgroundImage = 'url(../images/wood.jpg)'
         }
         else {
             li.style.backgroundImage = 'url(../images/imags.jpeg)'
         }
         li.addEventListener('mouseover', ()=> {
-            textX.textContent = `x = ${item.y}`
-            textY.textContent = `y = ${item.x}`
+            textX.textContent = `x=${item.x}`
+            textY.textContent = `y=${item.y}`
         })
+     
         chessTable.appendChild(li);
 })
-console.log(tableList);
+
+
+let tableList = document.querySelectorAll('.ches__item')
 
 
 let queen = document.querySelector('.queen')
@@ -53,132 +57,367 @@ let bishop = document.querySelector('.bishop')
 let onfoot = document.querySelector('.onfoot')
 
 
-
-
 let x, y
 
 tableList.forEach((item,index)=> {
-    // console.log("bbvggvg");
-    item.addEventListener('mouseover', ()=> {
-        //  console.log("sdfghjk");
-        textX.textContent = `x = ${item.textContent[0]}`
-        textY.textContent = `y = ${item.textContent[3]}`
-      
-        x = item.textContent[0]
-        y = item.textContent[3]
+
+    queen.addEventListener('click', ()=> {
+
+        queen.classList.add('green')
+        onfoot.classList.remove('green')
+        king.classList.remove('green')
+        farzin.classList.remove('green')
+        bishop.classList.remove('green')
+        horse.classList.remove('green')
+
+
+        item.addEventListener('mouseover', (el)=> {
+
+            let xCor = el.target.classList[0].split('')[1]
+            let yCor = el.target.classList[1].split('')[1]
+         
+           
+
+tableList.forEach(idx => {
+        let xxx = idx.classList[0].split('')[1]
+        let yyy = idx.classList[1].split('')[1];
+
+        if(xxx==((xCor-0)-1) && yyy==yCor ||
+           xxx==((xCor-0)-1) && yyy==((yCor-0)-1) ||
+           xxx==xCor && yyy==((yCor-0)-1) ||
+           xxx==((xCor-0)+1) && yyy==((yCor-0)-1) ||
+           xxx==((xCor-0)+1) && yyy==yCor ||
+           xxx==((xCor-0)+1) && yyy==((yCor-0)+1)||
+           xxx==xCor && yyy==((yCor-0)+1) ||
+           xxx==((xCor-0)-1) && yyy==((yCor-0)+1)) {
+
+            idx.classList.add('green')
+        }else {
+            idx.classList.remove('green')
+        }
+            
+            })
+       
+          })
+    })
+
+
+    bishop.addEventListener('click', ()=> {
+
+        bishop.classList.add('green')
+        onfoot.classList.remove('green')
+        king.classList.remove('green')
+        farzin.classList.remove('green')
+        queen.classList.remove('green')
+        horse.classList.remove('green')
+        item.addEventListener('mouseover', (el)=> {
+
+            let xCor = el.target.classList[0].split('')[1]
+            let yCor = el.target.classList[1].split('')[1]
+         
+
+tableList.forEach(idx => {
+        let xxx = idx.classList[0].split('')[1]
+        let yyy = idx.classList[1].split('')[1];
    
+        if(xxx==((xCor-0)+1) && yyy==((yCor-0)-1) ||
+           xxx==((xCor-0)+2) && yyy==((yCor-0)-2) ||
+           xxx==((xCor-0)+3) && yyy==((yCor-0)-3) ||
+           xxx==((xCor-0)+4) && yyy==((yCor-0)-4) ||
+           xxx==((xCor-0)+5) && yyy==((yCor-0)-5) ||
+           xxx==((xCor-0)+6) && yyy==((yCor-0)-6) ||
+           xxx==((xCor-0)+7) && yyy==((yCor-0)-8) ||
+           xxx==((xCor-0)+8) && yyy==((yCor-0)-8) ||
+           xxx==((xCor-0)+1) && yyy==((yCor-0)+1) ||
+           xxx==((xCor-0)+2) && yyy==((yCor-0)+2) ||
+           xxx==((xCor-0)+3) && yyy==((yCor-0)+3) ||
+           xxx==((xCor-0)+4) && yyy==((yCor-0)+4) ||
+           xxx==((xCor-0)+5) && yyy==((yCor-0)+5) ||
+           xxx==((xCor-0)+6) && yyy==((yCor-0)+6) ||
+           xxx==((xCor-0)+7) && yyy==((yCor-0)+7) ||
+           xxx==((xCor-0)+8) && yyy==((yCor-0)+8) ||
+           xxx==((xCor-0)-1) && yyy==((yCor-0)+1) ||
+           xxx==((xCor-0)-2) && yyy==((yCor-0)+2) ||
+           xxx==((xCor-0)-3) && yyy==((yCor-0)+3) ||
+           xxx==((xCor-0)-4) && yyy==((yCor-0)+4) ||
+           xxx==((xCor-0)-5) && yyy==((yCor-0)+5) ||
+           xxx==((xCor-0)-6) && yyy==((yCor-0)+6) ||
+           xxx==((xCor-0)-7) && yyy==((yCor-0)+7) ||
+           xxx==((xCor-0)-8) && yyy==((yCor-0)+8) ||
+           xxx==((xCor-0)-1) && yyy==((yCor-0)-1) ||
+           xxx==((xCor-0)-2) && yyy==((yCor-0)-2) ||
+           xxx==((xCor-0)-3) && yyy==((yCor-0)-3) ||
+           xxx==((xCor-0)-4) && yyy==((yCor-0)-4) ||
+           xxx==((xCor-0)-5) && yyy==((yCor-0)-5) ||   
+           xxx==((xCor-0)-6) && yyy==((yCor-0)-6) ||
+           xxx==((xCor-0)-7) && yyy==((yCor-0)-7) ||
+           xxx==((xCor-0)-8) && yyy==((yCor-0)-8)) {
+
+            idx.classList.add('green')
+        }else {
+            idx.classList.remove('green')
+        }
+            
+            })
+       
+          })
     })
-    farzin.addEventListener('clcik', (els) => {
 
-        item.addEventListener('mouseover', ()=> {
 
-        let xCor = item.classList[0];
-        let yCor = item.classList[1];
+    horse.addEventListener('click', ()=> {
 
-        let xCors = document.querySelectorAll(`.${xCor}`)
-        let yCors = document.querySelectorAll(`.${yCor}`)
-        // console.log(xCors);
-        xCors.forEach(element => {
-            element.classList.add('green')
-        })
-        yCors.forEach(element => {
-            element.classList.add('green')
-        })
-        item.classList.add('red')
-        console.log(item.classList[0]);
-        })
+        horse.classList.add('green')
+        farzin.classList.remove('green')
+        king.classList.remove('green')
+        queen.classList.remove('green')
+        onfoot.classList.remove('green')
+        bishop.classList.remove('green')
+
+        item.addEventListener('mouseover', (el)=> {
+
+            let xCor = el.target.classList[0].split('')[1]
+            let yCor = el.target.classList[1].split('')[1]
+         
+
+tableList.forEach(idx => {
+        let xxx = idx.classList[0].split('')[1]
+        let yyy = idx.classList[1].split('')[1];
+
+        if(xxx==((xCor-0)+1) && yyy==((yCor-0)-2) ||
+           xxx==((xCor-0)+2) && yyy==((yCor-0)-1) ||
+           xxx==((xCor-0)+2) && yyy==((yCor-0)+1) ||
+           xxx==((xCor-0)+1) && yyy==((yCor-0)+2) ||
+           xxx==((xCor-0)-1) && yyy==((yCor-0)+2) ||
+           xxx==((xCor-0)-2) && yyy==((yCor-0)+1) ||
+           xxx==((xCor-0)-2) && yyy==((yCor-0)-1) ||
+           xxx==((xCor-0)-1) && yyy==((yCor-0)-2)) {
+
+            idx.classList.add('green')
+        }else {
+            idx.classList.remove('green')
+        }
+            
+            })
+       
+          })
     })
-    item.addEventListener('mouseout', ()=> {
-        let xCor = item.classList[0];
-        let yCor = item.classList[1];
+    farzin.addEventListener('click', ()=> {
 
-        let xCors = document.querySelectorAll(`.${xCor}`)
-        let yCors = document.querySelectorAll(`.${yCor}`)
-        // console.log(xCors);
-        xCors.forEach(element => {
-            element.classList.remove('green')
-        })
-        yCors.forEach(element => {
-            element.classList.remove('green')
-        })
-        item.classList.add('white')
-        console.log(item.classList[0]);
+        farzin.classList.add('green')
+        horse.classList.remove('green')
+        king.classList.remove('green')
+        queen.classList.remove('green')
+        onfoot.classList.remove('green')
+        bishop.classList.remove('green')
+
+        item.addEventListener('mouseover', (el)=> {
+
+            let xCor = el.target.classList[0].split('')[1]
+            let yCor = el.target.classList[1].split('')[1]
+         
+            console.log(xCor, yCor);
+
+tableList.forEach(idx => {
+        let xxx = idx.classList[0].split('')[1]
+        let yyy = idx.classList[1].split('')[1];
+        console.log();
+        if(xxx==xCor && yyy==((yCor-0)-1) ||
+           xxx==xCor && yyy==((yCor-0)-2) ||
+           xxx==xCor && yyy==((yCor-0)-3) ||
+           xxx==xCor && yyy==((yCor-0)-4) ||
+           xxx==xCor && yyy==((yCor-0)-5) ||
+           xxx==xCor && yyy==((yCor-0)-6) ||
+           xxx==xCor && yyy==((yCor-0)-7) ||
+           xxx==xCor && yyy==((yCor-0)-8) ||
+           xxx==((xCor-0)+1) && yyy==yCor ||
+           xxx==((xCor-0)+2) && yyy==yCor ||
+           xxx==((xCor-0)+3) && yyy==yCor ||
+           xxx==((xCor-0)+4) && yyy==yCor ||
+           xxx==((xCor-0)+5) && yyy==yCor ||
+           xxx==((xCor-0)+6) && yyy==yCor ||
+           xxx==((xCor-0)+7) && yyy==yCor ||
+           xxx==((xCor-0)+8) && yyy==yCor ||
+           xxx==((xCor-0)-1) && yyy==yCor ||
+           xxx==((xCor-0)-2) && yyy==yCor ||
+           xxx==((xCor-0)-3) && yyy==yCor ||
+           xxx==((xCor-0)-4) && yyy==yCor ||
+           xxx==((xCor-0)-5) && yyy==yCor ||
+           xxx==((xCor-0)-6) && yyy==yCor ||
+           xxx==((xCor-0)-7) && yyy==yCor ||
+           xxx==((xCor-0)-8) && yyy==yCor ||
+           xxx==xCor && yyy==((yCor-0)+1) ||
+           xxx==xCor && yyy==((yCor-0)+2) ||
+           xxx==xCor && yyy==((yCor-0)+3) ||
+           xxx==xCor && yyy==((yCor-0)+4) ||
+           xxx==xCor && yyy==((yCor-0)+5) ||
+           xxx==xCor && yyy==((yCor-0)+6) ||
+           xxx==xCor && yyy==((yCor-0)+7) ||
+           xxx==xCor && yyy==((yCor-0)+8) ) {
+
+            idx.classList.add('green')
+        }else {
+            idx.classList.remove('green')
+        }
+    
+            })
+       
+          })
     })
+
+
+    king.addEventListener('click', ()=> {
+
+        king.classList.add('green')
+        horse.classList.remove('green')
+        farzin.classList.remove('green')
+        queen.classList.remove('green')
+        onfoot.classList.remove('green')
+        bishop.classList.remove('green')
+
+        item.addEventListener('mouseover', (el)=> {
+
+            let xCor = el.target.classList[0].split('')[1]
+            let yCor = el.target.classList[1].split('')[1]
+         
+            console.log(xCor, yCor);
+
+tableList.forEach(idx => {
+        let xxx = idx.classList[0].split('')[1]
+        let yyy = idx.classList[1].split('')[1];
+  
+        if(xxx==xCor && yyy==((yCor-0)-1) ||
+           xxx==xCor && yyy==((yCor-0)-2) ||
+           xxx==xCor && yyy==((yCor-0)-3) ||
+           xxx==xCor && yyy==((yCor-0)-4) ||
+           xxx==xCor && yyy==((yCor-0)-5) ||
+           xxx==xCor && yyy==((yCor-0)-6) ||
+           xxx==xCor && yyy==((yCor-0)-7) ||
+           xxx==xCor && yyy==((yCor-0)-8) ||
+           xxx==((xCor-0)+1) && yyy==yCor ||
+           xxx==((xCor-0)+2) && yyy==yCor ||
+           xxx==((xCor-0)+3) && yyy==yCor ||
+           xxx==((xCor-0)+4) && yyy==yCor ||
+           xxx==((xCor-0)+5) && yyy==yCor ||
+           xxx==((xCor-0)+6) && yyy==yCor ||
+           xxx==((xCor-0)+7) && yyy==yCor ||
+           xxx==((xCor-0)+8) && yyy==yCor ||
+           xxx==((xCor-0)-1) && yyy==yCor ||
+           xxx==((xCor-0)-2) && yyy==yCor ||
+           xxx==((xCor-0)-3) && yyy==yCor ||
+           xxx==((xCor-0)-4) && yyy==yCor ||
+           xxx==((xCor-0)-5) && yyy==yCor ||
+           xxx==((xCor-0)-6) && yyy==yCor ||
+           xxx==((xCor-0)-7) && yyy==yCor ||
+           xxx==((xCor-0)-8) && yyy==yCor ||
+           xxx==xCor && yyy==((yCor-0)+1) ||
+           xxx==xCor && yyy==((yCor-0)+2) ||
+           xxx==xCor && yyy==((yCor-0)+3) ||
+           xxx==xCor && yyy==((yCor-0)+4) ||
+           xxx==xCor && yyy==((yCor-0)+5) ||
+           xxx==xCor && yyy==((yCor-0)+6) ||
+           xxx==xCor && yyy==((yCor-0)+7) ||
+           xxx==xCor && yyy==((yCor-0)+8) ||
+           xxx==((xCor-0)-1) && yyy==yCor ||
+           xxx==((xCor-0)-1) && yyy==((yCor-0)-1) ||
+           xxx==xCor && yyy==((yCor-0)-1) ||
+           xxx==((xCor-0)+1) && yyy==((yCor-0)-1) ||
+           xxx==((xCor-0)+1) && yyy==yCor ||
+           xxx==((xCor-0)+1) && yyy==((yCor-0)+1)||
+           xxx==xCor && yyy==((yCor-0)+1) ||
+           xxx==((xCor-0)-1) && yyy==((yCor-0)+1) ||
+           xxx==((xCor-0)+1) && yyy==((yCor-0)-1) ||
+           xxx==((xCor-0)+2) && yyy==((yCor-0)-2) ||
+           xxx==((xCor-0)+3) && yyy==((yCor-0)-3) ||
+           xxx==((xCor-0)+4) && yyy==((yCor-0)-4) ||
+           xxx==((xCor-0)+5) && yyy==((yCor-0)-5) ||
+           xxx==((xCor-0)+6) && yyy==((yCor-0)-6) ||
+           xxx==((xCor-0)+7) && yyy==((yCor-0)-8) ||
+           xxx==((xCor-0)+8) && yyy==((yCor-0)-8) ||
+           xxx==((xCor-0)+1) && yyy==((yCor-0)+1) ||
+           xxx==((xCor-0)+2) && yyy==((yCor-0)+2)  ||
+           xxx==((xCor-0)+3) && yyy==((yCor-0)+3) ||
+           xxx==((xCor-0)+4) && yyy==((yCor-0)+4) ||
+           xxx==((xCor-0)+5) && yyy==((yCor-0)+5) ||
+           xxx==((xCor-0)+6) && yyy==((yCor-0)+6) ||
+           xxx==((xCor-0)+7) && yyy==((yCor-0)+7) ||
+           xxx==((xCor-0)+8) && yyy==((yCor-0)+8) ||
+           xxx==((xCor-0)-1) && yyy==((yCor-0)+1) ||
+           xxx==((xCor-0)-2) && yyy==((yCor-0)+2) ||
+           xxx==((xCor-0)-3) && yyy==((yCor-0)+3) ||
+           xxx==((xCor-0)-4) && yyy==((yCor-0)+4) ||
+           xxx==((xCor-0)-5) && yyy==((yCor-0)+5) ||
+           xxx==((xCor-0)-6) && yyy==((yCor-0)+6) ||
+           xxx==((xCor-0)-7) && yyy==((yCor-0)+7) ||
+           xxx==((xCor-0)-8) && yyy==((yCor-0)+8) ||
+           xxx==((xCor-0)-1) && yyy==((yCor-0)-1) ||
+           xxx==((xCor-0)-2) && yyy==((yCor-0)-2) ||
+           xxx==((xCor-0)-3) && yyy==((yCor-0)-3) ||
+           xxx==((xCor-0)-4) && yyy==((yCor-0)-4) ||
+           xxx==((xCor-0)-5) && yyy==((yCor-0)-5) ||   
+           xxx==((xCor-0)-6) && yyy==((yCor-0)-6) ||
+           xxx==((xCor-0)-7) && yyy==((yCor-0)-7) ||
+           xxx==((xCor-0)-8) && yyy==((yCor-0)-8)) {
+
+            idx.classList.add('green')
+        }else {
+            idx.classList.remove('green')
+        }
+    
+            })
+       
+          })
+    })
+
+onfoot.addEventListener('click', ()=> {
+
+    onfoot.classList.add('green')
+    farzin.classList.remove('green')
+    king.classList.remove('green')
+    queen.classList.remove('green')
+    bishop.classList.remove('green')
+    horse.classList.remove('green')
+
+    item.addEventListener('mouseover', (el)=> {
+
+        let xCor = el.target.classList[0].split('')[1]
+        let yCor = el.target.classList[1].split('')[1]
+     
+        console.log(xCor, yCor);
+
+tableList.forEach(idx => {
+    let xxx = idx.classList[0].split('')[1]
+    let yyy = idx.classList[1].split('')[1];
+    console.log();
+    if(yCor==7) {
+        if(xxx==xCor && yyy==((yCor-0)-1)&& yyy==((yCor-0)-2)         ||
+        xxx==((xCor-0)+1) && yyy==((yCor-0)-1)&& yyy==((yCor-0)-2) || 
+        xxx==((xCor-0)+2) && yyy==((yCor-0)-1)&& yyy==((yCor-0)-2) || 
+        xxx==((xCor-0)+3) && yyy==((yCor-0)-1)&& yyy==((yCor-0)-2) ||
+        xxx==((xCor-0)+4) && yyy==((yCor-0)-1)&& yyy==((yCor-0)-2) ||
+        xxx==((xCor-0)+5) && yyy==((yCor-0)-1)&& yyy==((yCor-0)-2) ||
+        xxx==((xCor-0)+6) && yyy==((yCor-0)-1)&& yyy==((yCor-0)-2) ||
+        xxx==((xCor-0)+7) && yyy==((yCor-0)-1)&& yyy==((yCor-0)-2) ||
+        xxx==((xCor-0)+8) && yyy==((yCor-0)-1)&& yyy==((yCor-0)-2)){
+         idx.classList.add('green')
+     }
+     else {
+         idx.classList.remove('green')
+     }
+    }
+
+        
+        })
+   
+      })
+})
+
+
+chessTable.addEventListener("mouseout", () => {
+    tableList.forEach((element) => {
+        console.log('ok');
+        element.classList.remove('green');
+    })
+})
 
 })
 
-// tableList.forEach((e, i)=> {
-//     e.addEventListener('mouseover', ()=> {
-
-//     })
-// })
-
-// function queenfun () {
-    // queen.addEventListener('click', ()=> {
-    //     // console.log("aaa");
-    //     queen.classList.add('green')
-    //     king.classList.remove('green')
-    //     farzin.classList.remove('green')
-    //     bishop.classList.remove('green')
-    //     horse.classList.remove('green')
-    //     onfoot.classList.remove('green')
-
-
-
-    //     tableList.forEach((e)=> {
-    //         e.addEventListener('mouseout', ()=> {
-    //             e.classList.remove('form1')
-    //         })
-    //         e.addEventListener('mouseover', ()=> {
-    //             e.classList.add('moveitem')
-    //             x =e.childNodes[1].textContent;
-    //             y =e.childNodes[3].textContent
-
-    //             queen.addEventListener('click', forms1(x, y))
-    //             if(count==1) {
-    //                 count++
-    //             }else{
-    //                 count=1
-    //             }
-    //         })
-    //        e.classList.remove('moveitem')
-    //     })
-    // })
-// }
-// queenfun()
-
-
-// function itemsFun() {
-//     tableList.forEach((e) => {
-//       e.addEventListener('mouseout', () => {
-//         e.classList.remove('movitem2')
-//         e.classList.remove('movItem')
-//       })
-//       e.addEventListener('mouseover', () => {
-//         tableList.forEach((ee) => {
-//           ee.classList.remove('movitem2')
-//           ee.classList.remove('movItem')
-//         })
-//         e.classList.remove('movItem')
-//         e.classList.add('movitem2')
-//         textX.innerHTML = e.childNodes[1].textContent;
-//         textY.innerHTML = e.childNodes[3].textContent;
-//       })
-//       e.classList.remove('movitem2')
-//       e.classList.remove('movItem')
-//     })
-//   } itemsFun()
-
-
-// function forms1(x, y) {
-//     console.log("a");
-//     tableList.forEach((item)=> {
-//         console.log(item);
-//         if(item.childNodes[1].textContent ==x || item.childNodes[3].textContent==y) {
-//             item.classList.add('green')
-//         }
-//         else {
-//             item.classList.remove('green')
-//         }
-//     })
-// }forms1()
