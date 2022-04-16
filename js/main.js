@@ -53,7 +53,7 @@ let bishop = document.querySelector('.bishop')
 let onfoot = document.querySelector('.onfoot')
 
 
-let x, y
+
 
 tableList.forEach((item,index)=> {
 
