@@ -14,11 +14,13 @@ body {
 }
 .ches {
   padding: 20px 20px;
-  perspective: 1000px;
 }
 .ches__body {
   display: flex;
   justify-content: space-between;
+  perspective: 1000px;
+  transition: all 0.3s ease;
+
 }
 .ches__board-btn {
   width: 80px;

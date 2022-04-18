@@ -432,15 +432,15 @@ let dButton = document.querySelector('.ches__three-d');
 
 
 let count =1
-// dButton.addEventListener('click', ()=> {
+dButton.addEventListener('click', ()=> {
 
-//     if(count==1) {
-//         dButton.textContent= `2D`
-//         chesBoard.classList.add('anim3D');
-//         count++
-//     }else {
-//         chesBoard.classList.remove('anim3D');
-//         dButton.textContent= `3D`
-//     }
-// })
+    if(count==1) {
+        dButton.textContent= `2D`
+        chesBoard.classList.add('anim3D');
+        count++
+    }else {
+        chesBoard.classList.remove('anim3D');
+        dButton.textContent= `3D`
+    }
+})
 
